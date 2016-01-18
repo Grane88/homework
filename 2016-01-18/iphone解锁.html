@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{ margin: 0; padding: 0;}
+			body{ background: dodgerblue;}
+			.box{ position: relative; width: 200px; height: 50px; border: 1px solid #000; margin: 100px auto;}
+			.box div{ position: absolute; top: 0; left: 0; line-height: 50px; height: 50px; width: 200px; text-align: center; font-size: 22px;}
+			.box div.div{color:rgba(0,0,0,0);}
+		</style>
+		<script>
+			document.addEventListener('DOMContentLoaded', function() {
+				var oDiv = document.querySelector('.div');
+				var i = 0;
+				setInterval(function(){
+					i+=3;
+					oDiv.style.background='-webkit-linear-gradient(-30deg,rgba(255,255,255,0) '+i+'px,rgba(255,255,255,1) '+(i+20)+'px,rgba(255,255,255,0) '+(i+40)+'px)';	
+					oDiv.style.WebkitBackgroundClip = 'text';
+					if(i>=250){
+						i=-50;
+					}
+				},30);
+			})
+		</script>
+	</head>
+
+	<body>
+		<div class="box">
+			<div>请划动屏幕解锁</div>
+			<div class="div">请划动屏幕解锁</div>
+		</div>
+	</body>
+
+</html>
