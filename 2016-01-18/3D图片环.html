@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			body {
+				background: #000;
+			}
+			.box{
+				width: 135px;
+				height: 202px;
+				position: relative;
+				margin: 200px auto;
+				-webkit-transform:perspective(800px) rotateY(0deg) rotateX(-20deg);
+				-moz-transform:perspective(800px) rotateY(0deg) rotateX(-20deg);
+				-ms-transform:perspective(800px) rotateY(0deg) rotateX(-20deg);
+				transform:perspective(800px) rotateY(0deg) rotateX(-20deg);
+				-webkit-transform-style: preserve-3d;
+				-moz-transform-style: preserve-3d;
+				-ms-transform-style: preserve-3d;
+				transform-style: preserve-3d;
+				-webkit-transition: 2s all ease;
+				-moz-transition: 2s all ease;
+				-ms-transition: 2s all ease;
+				transition: 2s all ease;
+			}
+			.box li{
+				width: 135px;
+				height: 202px;
+				position: absolute;
+				border: 1px solid #FFF;
+				border-radius: 5px;
+				top: 0;
+				left: 0;
+				-webkit-transition:1s all ease;
+				-moz-transition:1s all ease;
+				-ms-transition:1s all ease;
+				transition:1s all ease;
+			}
+			.box li img {
+				border-radius: 5px;
+				border: 1px solid #000;
+			}
+			.box:active{
+				-webkit-transform:perspective(800px) rotateY(360deg) rotateX(-20deg);
+				-moz-transform:perspective(800px) rotateY(360deg) rotateX(-20deg);
+				-ms-transform:perspective(800px) rotateY(360deg) rotateX(-20deg);
+				transform:perspective(800px) rotateY(360deg) rotateX(-20deg);
+			}
+		</style>
+		<script>
+			window.onload = function(){
+				var oBox = document.getElementsByTagName('ul')[0];
+				var aLi = oBox.children;
+				var i = aLi.length-1;
+				var timer = setInterval(function(){
+					aLi[i].style.transform='rotateY('+i*360/aLi.length+'deg) translateZ(400px)';
+					i--;
+					if(i<0){
+						clearInterval(timer);
+					}
+				},350);
+			}
+		</script>
+	</head>
+
+	<body>
+		<ul class="box">
+			<li><img src="images/1.jpg" /></li>
+			<li><img src="images/2.jpg" /></li>
+			<li><img src="images/3.jpg" /></li>
+			<li><img src="images/4.jpg" /></li>
+			<li><img src="images/5.jpg" /></li>
+			<li><img src="images/6.jpg" /></li>
+			<li><img src="images/7.jpg" /></li>
+			<li><img src="images/8.jpg" /></li>
+			<li><img src="images/9.jpg" /></li>
+			<li><img src="images/10.jpg" /></li>
+			<li><img src="images/11.jpg" /></li>
+		</ul>
+	</body>
+
+</html>
